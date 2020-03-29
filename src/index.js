@@ -1,44 +1,4 @@
-/*module.exports = function solveSudoku(matrix) {
-  // your solution
-  var nonPossibiities = {},
-      impossibleNumber,
-      emptySpaces = 0;
-  while (emptySpaces > 0){
-    for (var v = 0; v < matrix.length;v++){
-      for (var h = 0; h < matrix.length; h++){
-        nonPossibiities = {};
-        if (matrix[v][h] === 0){
-          for (var i = 0; i < 9; i++){
-            if(matrix[v][i] > 0){
-              nonPossibiities[matrix[v][i]] = true;
-            }
-            if(matrix[i][h] > 0){
-              nonPossibiities[matrix[i][h]] = true;
-            }
-          }
-          for (var vertBox = Math.floor(v / 3) * 3; vertBox < Math.floor(v / 3) * 3; vertBox++){
-            for (var horzBox = Math.floor(h / 3) * 3; horzBox < Math.floor(h / 3) * 3; horzBox++){
-              if (matrix[vertBox][horzBox]){
-                nonPossibiities[matrix[vertBox][horzBox]] = true;
-              }
-            }
-          }
-          impossibleNumber = Object.keys(nonPossibiities);
-          if (impossibleNumber.length === 8){
-            for ( var i = 0; i < 10; i++){
-              if (impossibleNumber.indexOf(i.toString()) < 0){
-                matrix[v][h] = i;
-              }
-            }
-          } else {
-            emptySpaces++;
-          }
-        }
-      }
-    }
-  }
-  return matrix;
-}*/
+
 module.exports = function solveSudoku(matrix) {
   if (solveSudokuRec(matrix)){
     return matrix;
